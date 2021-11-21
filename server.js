@@ -4,17 +4,17 @@ const fastify = require('fastify')({ logger: false })
 const port = process.env.PORT || 3000
 fastify.register(require('fastify-websocket'))
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
+  host: process.env.DBHOST,
+  user: process.env.DBUSER,
   password: process.env.DB_PASSWD,
-  database: 'db',
-  port: 3306
+  database: process.env.DBNAME,
+  port: process.env.DBPORT
 });
 console.log("application started on port: " + port)
 const start = async () => {
   try {
     console.log("fastify has started")
-    await fastify.listen(port)
+    await fastify.listen(port,0.0.0.0)
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
