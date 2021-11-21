@@ -14,7 +14,7 @@ console.log("application started on port: " + port)
 const start = async () => {
   try {
     console.log("fastify has started")
-    await fastify.listen(port,0.0.0.0)
+    await fastify.listen(port,'0.0.0.0')
   } catch (err) {
     fastify.log.error(err)
     process.exit(1)
