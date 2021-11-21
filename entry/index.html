@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Calendatrio Entry</title>
+    <link rel="stylesheet" href="/entry/css/main.css">
+</head>
+
+<body>
+    <h1>Entrada de datos</h1>
+    <div class="split">
+        <div class="flex-row">
+            <div id="left-container">
+                <label for="universidad">Universidad</label>
+                <select id="universidad">
+                    <option>Selecione Una</option>
+                </select>
+                <label for="carrera">Carrera</label>
+                <select id="carrera">
+                    <option>Selecione Una</option>
+                </select>
+                <label for="curso">Curso</label>
+                <select id="curso">
+                    <option>Selecione Una</option>
+                    <option>1º</option>
+                    <option>2º</option>
+                    <option>3º</option>
+                    <option>4º</option>
+                    <option>5º</option>
+                </select>
+                <button type="button" id="submit">Insertar</button>
+            </div>
+            <div class="left-container">
+                <label for="nombreExamen">Nombre</label>
+                <input type="text" id="nombreExamen" placeholder="nombre examen"></input>
+                <label for="Especial">Convocatoria Especial</label>
+                <input type="checkbox" id="Especial"></input>
+            </div>
+            <div class="left-container">
+                <label for="date">Fecha</label>
+                <input type="date" id="date"></input>
+                <label for="Extraordinaria">Convocatoria Extraordinaria</label>
+                <input type="checkbox" id="Extraordinaria"></input>
+            </div>
+            <div id="left-container">
+                <table id="mainTableShow">
+                    <tr class="index">
+                        <th>Universidad</th>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Carrera</th>
+                        <th>Curso</th>
+                        <th>Especial</th>
+                        <th>Extraordinaria</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="/entry/js/rest.js"></script>
+    <script src="/entry/js/main.js"></script>
+</body>
+
+</html>

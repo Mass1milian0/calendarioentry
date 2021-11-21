@@ -1,0 +1,68 @@
+.split{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+table{
+  margin-top: 90px;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-spacing: 0;
+  padding-right: 5px
+}
+th{
+  border-bottom: 1px solid;
+}
+th,td{
+  
+  border-left: 1px solid;
+}
+p{
+  padding-left: 3%;
+}
+.missing{
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
+  border-radius: 5px;
+}
+.flex-row {
+  display: flex;
+  flex-direction: column;
+  padding-right: 10%;
+}
+#left-container{
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    width: 50%;
+    height: 2%;
+    align-items:center;
+    padding-right: 5%; 
+    padding-bottom: 40px;
+
+}
+button{
+  margin-left: 2%;
+}
+.hidden{
+  display: none;
+}
+.delBtn{
+  width: 60px;
+  height: 20px;
+}
+#right-container{
+    right: 0;
+    width: 50%;
+}
