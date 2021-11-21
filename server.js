@@ -53,6 +53,8 @@ fastify.get('/wss/', { websocket: true }, async (connection /* SocketStream */, 
     }
     if(msg.operation == "sendToDb" /* TODO on production origin check*/){
       let response = await dbQuery(msg.content)
+      console.log("----------------")
+      console.log(response)
       connection.socket.send(JSON.stringify({
         operation: "ResponseFromDb",
         type: "QueryResponse",
