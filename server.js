@@ -10,8 +10,10 @@ const pool = mysql.createPool({
   database: 'db',
   port: 3306
 });
+console.log("application started on port: " + port)
 const start = async () => {
   try {
+    console.log("fastify has started")
     await fastify.listen(port)
   } catch (err) {
     fastify.log.error(err)
