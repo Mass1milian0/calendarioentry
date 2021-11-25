@@ -128,7 +128,8 @@ document.querySelector("#carrera").addEventListener("change", function () {
 })
 document.querySelector("#curso").addEventListener("change", function () {
     if (this.selectedIndex != 0) {
-        filterTableBy(this.options[this.selectedIndex].text, 4)
+        let regex = /\d/i;
+        filterTableBy(regex.exec(this.options[this.selectedIndex].text), 4)
     }
 })
 document.querySelector("#universidad").addEventListener("change", async function () {
