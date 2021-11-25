@@ -123,13 +123,11 @@ document.querySelector("#submit").addEventListener("click", function () {
 })
 document.querySelector("#carrera").addEventListener("change", function () {
     if (this.selectedIndex != 0) {
-        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text,3)
     }
 })
 document.querySelector("#curso").addEventListener("change", function () {
     if (this.selectedIndex != 0) {
-        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text, 4)
     }
 })
