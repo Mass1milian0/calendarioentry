@@ -51,7 +51,7 @@ function filterTableBy(filter,cell) {
     for (let i of table.rows) {
         if (!i.classList.contains("index")) {
             if (i.cells[cell].innerText != filter) {
-                i.classList.toggle("hidden")
+                i.classList.add("hidden")
             }
         }
     }
@@ -123,13 +123,11 @@ document.querySelector("#submit").addEventListener("click", function () {
 })
 document.querySelector("#carrera").addEventListener("change", function () {
     if (this.selectedIndex != 0) {
-        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text,3)
     }
 })
 document.querySelector("#curso").addEventListener("change", function () {
     if (this.selectedIndex != 0) {
-        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text, 4)
     }
 })
