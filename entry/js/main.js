@@ -46,11 +46,11 @@ function addToTable(data) {
     let tr = buildTr([data.universidad, data.nombreExamen, regex.exec(data.fechaExamen), data.facultad, data.curso, data.convocatoriaEspecial, data.convocatoriaExtraordinaria])
     table.appendChild(tr)
 }
-function filterTableBy(filter) {
+function filterTableBy(filter,cell) {
     const table = document.querySelector("#mainTableShow")
     for (let i of table.rows) {
         if (!i.classList.contains("index")) {
-            if (i.cells[0].innerText != filter) {
+            if (i.cells[cell].innerText != filter) {
                 i.classList.toggle("hidden")
             }
         }
@@ -121,12 +121,26 @@ function resetOptions() {
 document.querySelector("#submit").addEventListener("click", function () {
     //TODO connect dates to db
 })
+document.querySelector("#carrera").addEventListener("change", function () {
+    resetOptions()
+    if (this.selectedIndex != 0) {
+        resetOptions()
+        filterTableBy(this.options[this.selectedIndex].text,3)
+    }
+})
+document.querySelector("#curso").addEventListener("change", function () {
+    resetOptions()
+    if (this.selectedIndex != 0) {
+        resetOptions()
+        filterTableBy(this.options[this.selectedIndex].text, 4)
+    }
+})
 document.querySelector("#universidad").addEventListener("change", async function () {
     console.log("Sent msg to WS");
     resetOptions()
     if (this.selectedIndex != 0) {
         resetFilter()
-        filterTableBy(this.options[this.selectedIndex].text)
+        filterTableBy(this.options[this.selectedIndex].text, 0)
         socket.send(JSON.stringify({
             operation: "getFromDb",
             context: "#carrera",
