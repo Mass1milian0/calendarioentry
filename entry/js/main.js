@@ -122,16 +122,14 @@ document.querySelector("#submit").addEventListener("click", function () {
     //TODO connect dates to db
 })
 document.querySelector("#carrera").addEventListener("change", function () {
-    resetOptions()
     if (this.selectedIndex != 0) {
-        resetOptions()
+        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text,3)
     }
 })
 document.querySelector("#curso").addEventListener("change", function () {
-    resetOptions()
     if (this.selectedIndex != 0) {
-        resetOptions()
+        resetFilter()
         filterTableBy(this.options[this.selectedIndex].text, 4)
     }
 })
